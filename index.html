@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./src/assets/logo.svg" />
+    <link rel="stylesheet" href="./src/index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fardin | Portfolio</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      let scrollTimer; // Variable to hold the scroll timer
+
+      // Function to handle scroll event
+      window.addEventListener(
+        "scroll",
+        () => {
+          clearTimeout(scrollTimer); // Clear previous scroll timer
+          document.body.classList.add("scrollbar-active"); // Add class to indicate scrollbar is active
+
+          // Set new scroll timer to hide scrollbar thumb after 10s of inactivity
+          scrollTimer = setTimeout(() => {
+            document.body.classList.add("scrollbar-inactive"); // Remove class to hide scrollbar thumb
+          }, 5000); // 10 seconds timeout
+
+          document.body.classList.remove("scrollbar-inactive");
+        },
+        {
+          passive: true,
+        }
+      );
+    </script>
+  </body>
+</html>
