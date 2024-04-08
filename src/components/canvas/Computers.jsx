@@ -7,7 +7,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import CanvasLoader from '../Loader.jsx';
 
 const Computers = ({ isMobile }) => {
-  const computer = useGLTF('./desktop_pc/scene.gltf', true);
+  const computer = useLoader(GLTFLoader, './desktop_pc/scene.gltf');
 
   return (
     <primitive
@@ -36,13 +36,13 @@ const ComputerCanvas = () => {
     return () => {
       mediaQuery.removeEventListener('change', handleMediaQueryChange);
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <Canvas
       frameloop="demand"
       shadows
-      camera={{ position: [20, 3, 5], fov: 25 }}
+      camera={{ position: [20, 3, 5], fov: 25, near: 0.1, far: 200 }}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
@@ -57,7 +57,6 @@ const ComputerCanvas = () => {
           shadow-mapSize={1024}
         />
         <OrbitControls
-        autoRotate
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}

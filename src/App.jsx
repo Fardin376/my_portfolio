@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
-import { BrowserRouter } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 import {
   About,
@@ -12,13 +12,13 @@ import {
   Tech,
   Works,
   StarsCanvas,
-} from "./components/index.js";
+} from './components/index.js';
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
-        <div className="bg-hero-pattern bg-cover bg-no-repeat">
+        <div className="bg-hero-pattern bg-cover bg-no-repeat ">
           <Navbar />
           <Hero />
         </div>
