@@ -1,7 +1,8 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { styles } from "../styles.js";
-import { ComputerCanvas } from "./canvas/index.js";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { styles } from '../styles.js';
+import { ComputerCanvas } from './canvas/index.js';
+import { slideIn } from '../utils/motion.js';
 
 const Hero = () => {
   return (
@@ -19,15 +20,21 @@ const Hero = () => {
             Hi I'm <span className="text-[#e61c3e]">Fardin</span>
           </h1>
           <p className={`${styles.heroSubText} text-white-100`}>
-            I develop immersive and dynamic web experiences.{" "}
-            <br className="sm:block hidden" />{" "}
+            I develop immersive and dynamic web experiences.{' '}
+            <br className="sm:block hidden" />{' '}
             <span className="text-[20px] text-[#e61c3e] font-bold italic">
               Let's bring your ideas to life!
             </span>
           </p>
         </div>
       </div>
-      <ComputerCanvas />
+
+      <motion.div
+        variants={slideIn('right', 'tween', 0.2, 1)}
+        className="w-full mx-auto flex items-center justify-center absolute inset-0 top-[-20px]"
+      >
+        <ComputerCanvas />
+      </motion.div>
 
       <div className="absolute xs:bottom-10 md:bottom-10 bottom-4 w-full flex justify-center items-center">
         <a href="#about">
@@ -39,7 +46,7 @@ const Hero = () => {
               transition={{
                 duration: 1.5,
                 repeat: Infinity,
-                repeatType: "loop",
+                repeatType: 'loop',
               }}
               className="w-3 h-3 rounded-full bg-secondary mb-1"
             />

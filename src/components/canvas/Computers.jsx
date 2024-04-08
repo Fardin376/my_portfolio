@@ -23,7 +23,7 @@ const ComputerCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width:500px)');
+    const mediaQuery = window.matchMedia('(max-width:425px)');
 
     setIsMobile(mediaQuery.matches);
 
@@ -46,7 +46,7 @@ const ComputerCanvas = () => {
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
-        <hemisphereLight intensity={0.15} groundColor="black" />
+        <hemisphereLight intensity={0.15} />
         <pointLight intensity={1} />
         <spotLight
           position={[-20, 50, 10]}
@@ -57,7 +57,7 @@ const ComputerCanvas = () => {
           shadow-mapSize={1024}
         />
         <OrbitControls
-          autoRotate
+        autoRotate
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}

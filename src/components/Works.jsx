@@ -29,7 +29,7 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className="card-bg_morph parallax-effect-glare-scale p-5 rounded-2xl sm:w-[360px] w-full h-[30rem] shadow-[#f88a9c9a] shadow-inner"
+        className="card-bg_morph parallax-effect-glare-scale p-5 rounded-2xl sm:w-[360px] w-full shadow-[#f88a9c9a] shadow-inner"
       >
         <div className="relative w-full h-[230px] inner-element">
           <img
