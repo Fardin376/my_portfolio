@@ -1,19 +1,19 @@
 // @ts-nocheck
-import React from "react";
-import { Tilt } from "react-tilt";
-import { motion } from "framer-motion";
+import React from 'react';
+import { Tilt } from 'react-tilt';
+import { motion } from 'framer-motion';
 
-import { styles } from "../styles.js";
-import { services } from "../constants/constants.js";
-import { fadeIn, textVariant } from "../utils/motion.js";
-import { SectionWrapper } from "../hoc/index.js";
+import { styles } from '../styles.js';
+import { services } from '../constants/constants.js';
+import { fadeIn, textVariant } from '../utils/motion.js';
+import { SectionWrapper } from '../hoc/index.js';
 
 const ServiceCard = ({ title, icon, index }) => {
   return (
     <Tilt className="xs:w-[250px] w-full">
       <motion.div
-        variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-        className="w-full red-blue-gradient p-[1px] rounded-[20px] shadow-card"
+        variants={fadeIn('right', 'spring', 0.5 * index, 0.75)}
+        className="w-full red-blue-gradient p-[1px] rounded-[20px] shadow-inner"
       >
         <div
           options={{
@@ -42,7 +42,7 @@ const About = () => {
       </motion.div>
 
       <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
+        variants={fadeIn('', '', 0.1, 1)}
         className="mt-4 text-secondary leading-[30px] text-[18px] max-w-3xl"
       >
         As an adept software developer, I specialize in TypeScript and
@@ -63,4 +63,4 @@ const About = () => {
   );
 };
 
-export default SectionWrapper(About, "about");
+export default SectionWrapper(About, 'about');
